@@ -47,5 +47,42 @@ namespace PollySamples
                 this.DivideByZero();
             });
         }
+
+        private void btnFallback_Click(object sender, EventArgs e)
+        {
+            var retryOnce = Policy
+                .Handle<DivideByZeroException>()
+                .Fallback((result, context) =>
+                {
+                    
+
+                }, (result, context) =>
+                {
+                    //in this way we can throw our exception with the inner exception
+                    throw new MyException("aaaa", result);
+                });
+
+            try
+            {
+
+
+                retryOnce.Execute(() =>
+                {
+                    this.DivideByZero();
+                });
+            }
+            catch (MyException ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            catch (Exception ex)
+            {
+
+            }
+            finally
+            {
+                MessageBox.Show("finally");
+            }
+        }
     }
 }
