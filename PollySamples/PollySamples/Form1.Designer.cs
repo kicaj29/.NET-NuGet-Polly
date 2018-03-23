@@ -31,6 +31,8 @@
             this.btnRetryPolicy_once = new System.Windows.Forms.Button();
             this.btnRetryPolicyMultiple = new System.Windows.Forms.Button();
             this.btnFallback = new System.Windows.Forms.Button();
+            this.btnFallbackPlusWaitAndRetry = new System.Windows.Forms.Button();
+            this.btnCircuitBreakerWaitAndRetry = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnRetryPolicy_once
@@ -63,11 +65,33 @@
             this.btnFallback.UseVisualStyleBackColor = true;
             this.btnFallback.Click += new System.EventHandler(this.btnFallback_Click);
             // 
+            // btnFallbackPlusWaitAndRetry
+            // 
+            this.btnFallbackPlusWaitAndRetry.Location = new System.Drawing.Point(27, 96);
+            this.btnFallbackPlusWaitAndRetry.Name = "btnFallbackPlusWaitAndRetry";
+            this.btnFallbackPlusWaitAndRetry.Size = new System.Drawing.Size(144, 23);
+            this.btnFallbackPlusWaitAndRetry.TabIndex = 3;
+            this.btnFallbackPlusWaitAndRetry.Text = "Fallback+WaitAndRetry";
+            this.btnFallbackPlusWaitAndRetry.UseVisualStyleBackColor = true;
+            this.btnFallbackPlusWaitAndRetry.Click += new System.EventHandler(this.btnFallbackPlusWaitAndRetry_Click);
+            // 
+            // btnCircuitBreakerWaitAndRetry
+            // 
+            this.btnCircuitBreakerWaitAndRetry.Location = new System.Drawing.Point(27, 154);
+            this.btnCircuitBreakerWaitAndRetry.Name = "btnCircuitBreakerWaitAndRetry";
+            this.btnCircuitBreakerWaitAndRetry.Size = new System.Drawing.Size(144, 23);
+            this.btnCircuitBreakerWaitAndRetry.TabIndex = 4;
+            this.btnCircuitBreakerWaitAndRetry.Text = "CircuitBreaker+WaitAndRetry";
+            this.btnCircuitBreakerWaitAndRetry.UseVisualStyleBackColor = true;
+            this.btnCircuitBreakerWaitAndRetry.Click += new System.EventHandler(this.btnCircuitBreakerWaitAndRetry_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(673, 262);
+            this.Controls.Add(this.btnCircuitBreakerWaitAndRetry);
+            this.Controls.Add(this.btnFallbackPlusWaitAndRetry);
             this.Controls.Add(this.btnFallback);
             this.Controls.Add(this.btnRetryPolicyMultiple);
             this.Controls.Add(this.btnRetryPolicy_once);
@@ -82,6 +106,8 @@
         private System.Windows.Forms.Button btnRetryPolicy_once;
         private System.Windows.Forms.Button btnRetryPolicyMultiple;
         private System.Windows.Forms.Button btnFallback;
+        private System.Windows.Forms.Button btnFallbackPlusWaitAndRetry;
+        private System.Windows.Forms.Button btnCircuitBreakerWaitAndRetry;
     }
 }
 

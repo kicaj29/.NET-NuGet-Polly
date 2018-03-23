@@ -10,5 +10,8 @@ namespace PollySamples
     {
         public  MyException(string name, Exception inner) : base(name, inner)
         { }
+
+        public MyException(string name) : base(name)
+        { }
     }
 }
